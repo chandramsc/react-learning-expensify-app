@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run dev-server
+  C:\Program Files\nodejs\node.exe C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add babel-plugin-transform-object-rest-spread@6.24.1
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw32\bin;C:\Program Files\Git\usr\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PuTTY\;C:\Users\chandra sekar\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\chandra sekar\AppData\Roaming\Composer\vendor\bin
@@ -43,6 +43,7 @@ npm manifest:
       "redux": "4.0.0",
       "sass-loader": "7.0.3",
       "style-loader": "0.21.0",
+      "uuid": "3.3.2",
       "validator": "10.3.0",
       "webpack": "3.1.0",
       "webpack-dev-server": "2.5.1"
@@ -5288,13 +5289,13 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   
+  uuid@3.3.2, uuid@^3.0.0:
+    version "3.3.2"
+    resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  
   uuid@^2.0.2:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
-  
-  uuid@^3.0.0:
-    version "3.3.2"
-    resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   
   v8flags@^2.0.10:
     version "2.1.1"
@@ -5563,18 +5564,7 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 3221225786
-  Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c webpack-dev-server
-  Directory: D:\React\learning\react-learning-expensify-app
-  Output:
-  
-      at ProcessTermError.Error (native)
-      at ProcessTermError.MessageError (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\chandra sekar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
-      at emitTwo (events.js:106:13)
-      at ChildProcess.emit (events.js:191:7)
-      at maybeClose (internal/child_process.js:886:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+  Error: getaddrinfo ENOENT registry.yarnpkg.com:443
+      at Object.exports._errnoException (util.js:1018:11)
+      at errnoException (dns.js:33:15)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
