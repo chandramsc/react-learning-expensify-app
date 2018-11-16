@@ -127,10 +127,6 @@ const filtersReducer = (state = filtersReducerDefaultState,action) => {
     }
 }
 
-// timestamp (milliseconds)
-// January 1st 1970 (unix epoch)
-// 33400, 10, -203 (valid timestamp)
-
 // Get visible expenses
 const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
     return expenses.filter((expense) => {
@@ -138,11 +134,13 @@ const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
         const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
         const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
 
-        // figure out if expenses.description as the text variable string inside of it
-        // includes
-        // convert both strings to lower case
-
         return startDateMatch && endDateMatch && textMatch;
+    }).sort((a,b) => {
+        if(sortBy === 'date') {
+            return a.createdAt < b.createdAt ? 1 : -1;
+        } else if (sortBy === 'amount') {
+            return a.amount < b.amount ? 1 : -1;
+        }
     });
 }
 
@@ -167,10 +165,10 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Coffe', amount: 300
 // store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 // store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 
-store.dispatch(setTextFilter('rent'));
+// store.dispatch(setTextFilter('rent'));
 // store.dispatch(setTextFilter());
 
-// store.dispatch(sortByAmount());
+store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());
 
 // store.dispatch(setStartDate(0)) // startDate 125
